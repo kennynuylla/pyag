@@ -29,7 +29,7 @@ class Cromossomo:
                 self.genes[i] += alteracao
 
     @classmethod
-    def aleatorio(cls, tipo, qtd_genes, tipo_mutacao, valor_referencia_mutacao, valores_minimos, valores_maximos):
+    def aleatorio(cls, tipo, qtd_genes, tipo_mutacao, valor_referencia_mutacao, valores_minimos = None, valores_maximos = None):
         cromo = cls(tipo_mutacao, valor_referencia_mutacao, qtd_genes)
 
         if(tipo == cls.TIPO_GENE_FLOAT):

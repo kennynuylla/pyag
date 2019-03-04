@@ -90,8 +90,9 @@ class AG:
             if(criterio_parada == self.PARADA_NGERACOES):
                 if(geracao_atual == valor_parada):
                     break
+
             elif(criterio_parada == self.PARADA_FITNESS):
-                if(melhor_fitness == valor_parada):
+                if(melhor_individuo.nota == valor_parada):
                     break
 
             elif(criterio_parada == self.PARADA_NGERACOES_SEM_MELHORA):

@@ -1,12 +1,12 @@
 .:Dados do Melhor Indivíduo
-Fitness: 37.831950
+Fitness: 37.841398
 Penalizações: 0
 -------------------
 ---------------------------
 Genes:
 ---------------------------
-Cromossomo 1: -0.999761 -0.999972 0.998692 
+Cromossomo 1: -0.999980 -0.999984 0.987245 
 
 
 .:Dados de Execução
-486 Gerações | 17.1418 s de execução
+1132 Gerações | 29.5004 s de execução
