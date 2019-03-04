@@ -78,17 +78,14 @@ class Individuo: #Classe Base
             cromossomo_ind_2 = ind2.cromossomos[i]
 
             #Cria cromossomos vazios com as mesma configurações dos cromossomso dos pais
-            cromossomo_filho_1 = cromossomo.Cromossomo(cromossomo_ind_1.tipo_mutacao, cromossomo_ind_1.valor_referencia_mutacao, cromossomo_ind_1.qtd_genes)
-            cromossomo_filho_2 = cromossomo.Cromossomo(cromossomo_ind_1.tipo_mutacao, cromossomo_ind_1.valor_referencia_mutacao, cromossomo_ind_1.qtd_genes)
+            cromossomo_filho_1 = copy.deepcopy(cromossomo_ind_1) #deepcopy para garantir que não vá nenhuma referência
+            cromossomo_filho_2 = copy.deepcopy(cromossomo_ind_2)
 
             if(tipo == cls.CROSSOVER_ALTERNADO):
                 for e in range(0, len(cromossomo_ind_1.genes)):
-                    if(random.uniform() > 0.5):
-                        cromossomo_filho_1.genes.append(copy.deepcopy(cromossomo_ind_1.genes[e])) #deepcopy para garantir que não vá nenhuma referência
-                        cromossomo_filho_2.genes.append(copy.deepcopy(cromossomo_ind_2.genes[e]))
-                    else:
-                        cromossomo_filho_1.genes.append(copy.deepcopy(cromossomo_ind_2.genes[e]))
-                        cromossomo_filho_2.genes.append(copy.deepcopy(cromossomo_ind_1.genes[e]))
+                    if(random.uniform() < 0.5): #50% de chances de inverter
+                        cromossomo_filho_1.genes[e] = copy.deepcopy(cromossomo_ind_2.genes[e])
+                        cromossomo_filho_2.genes[e] = copy.deepcopy(cromossomo_ind_1.genes[e])
             
             cromossomos1.append(copy.deepcopy(cromossomo_filho_1))
             cromossomos2.append(copy.deepcopy(cromossomo_filho_2))
