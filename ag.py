@@ -11,10 +11,10 @@ class AG:
     OBJETIVO_SELECAO_CROSSOVER = 0
     OBJETIVO_SELECAO_MORTE = 1
 
-    def __init__(self, classe_cromossomo, tamanho_populacao, argumento = None):
-        self.classe_cromossomo = classe_cromossomo
+    def __init__(self, class_individuo, tamanho_populacao, argumento = None):
+        self.class_individuo = class_individuo
         self.maximo_populacao = tamanho_populacao
-        self.populacao = classe_cromossomo.gerar_aleatorio(tamanho_populacao, argumento)
+        self.populacao = class_individuo.gerar_aleatorio(tamanho_populacao, argumento)
 
         self.flag_configurado = False
         self.argumento = argumento
@@ -101,7 +101,7 @@ class AG:
 
             while(acumulado_crossover > 2):
                 pai1,pai2 = self.selecionar(self.SELECAO_TORNEIO, self.OBJETIVO_SELECAO_CROSSOVER)
-                filho1,filho2 = self.classe_cromossomo.crossover(pai1, pai2, self.tipo_crossover, self.argumento)
+                filho1,filho2 = self.class_individuo.crossover(pai1, pai2, self.tipo_crossover, self.argumento)
                 filho1.avaliar()
                 filho2.avaliar()
 
