@@ -39,7 +39,7 @@ class Individuo: #Classe Base
         return True
 
     def __str__(self):
-        linha = "Fitness: %f\nPenalizações: %d\n-------------------\n" %(self.nota, self.penalizacoes)
+        linha = "Fitness: %f\nPenalizações: %d\n---------------------------\n" %(self.nota, self.penalizacoes)
         for i in range(0, len(self.id_penalizacoes)):
             linha += "%s\n" %(self.id_penalizacoes[i])    
         linha += "---------------------------\nGenes:\n---------------------------\n"
